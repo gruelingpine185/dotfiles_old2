@@ -15,22 +15,19 @@ if ! [[ -x "$(command -v brew)" ]]; then
 fi
 
 
-config_path="${HOME}/.config"
 # Path to homebrew config files
 dot_brew_path="$(dirname ${DIR})/brewfile"
 
 # Remove global Brewfile if already exists
-if [[ -e "${config_path}/brewfile/Brewfile" ]]; then
-   echo "Overwriting  ${config_path}/brewfile/Brewfile"
-   rm "${config_path}/brewfile/Brewfile"
-fi
-
-# Creates path for Brefile config
-if [[ ! -d "${config_path}/brewfile" ]]; then
-    mkdir -p "${config_path}/brewfile"
+if [[ -e "${HOME}/.Brewfile" ]]; then
+   echo "Overwriting  ${HOME}/.Brewfile"
+   rm "${HOME}/.Brewfile"
 fi
 
 # Creates a symlinks
-echo "Linking ${dot_brew_path}/Brewfile -> ${config_path}/brewfile/Brewfile"
-ln -s "$(realpath ${dot_brew_path}/Brewfile)" "${config_path}/brewfile/Brewfile"
+echo "Linking ${dot_brew_path}/Brewfile -> ${HOME}/.Brewfile"
+ln -s "$(realpath ${dot_brew_path}/Brewfile)" "${HOME}/.Brewfile"
+
+# Install packages, casks, etc.
+brew bundle --global
 echo "Done"
