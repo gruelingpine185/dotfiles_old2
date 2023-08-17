@@ -8,6 +8,7 @@ brew 'exa'
 brew 'git'
 brew 'neovim'
 brew 'ripgrep'
+brew 'romkatv/powerlevel10k/powerlevel10k'
 brew 'wget'
 brew 'zsh'
  
