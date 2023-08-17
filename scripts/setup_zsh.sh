@@ -22,9 +22,15 @@ if [[ -e "${HOME}/.zprofile" ]]; then
     rm "${HOME}/.zprofile"
 fi
 
+# Install powerlevel10k
+if [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+    echo "Installing Powerlevel10k"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
+
 # List of Zsh files that would go in $HOME. These files should not be prefixed
 # with '.'.
-zsh_home_files="zshrc zprofile"
+zsh_home_files="zshrc zprofile pk10k.zsh"
 
 # Path to Zsh config folder.
 zsh_dot_path="$(dirname ${DIR})/zsh"
