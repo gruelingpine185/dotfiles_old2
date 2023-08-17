@@ -1,3 +1,7 @@
+# taps
+tap 'homebrew/cask'
+tap 'homebrew/bundle'
+
 # packages
 brew 'bat'
 brew 'exa'
