@@ -1,15 +1,20 @@
 # taps
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
+tap 'zegervdv/zathura'
 
 # packages
 brew 'bat'
+brew 'cmake'
 brew 'exa'
 brew 'git'
 brew 'neovim'
+brew 'pkg-config'
 brew 'ripgrep'
 brew 'romkatv/powerlevel10k/powerlevel10k'
 brew 'wget'
+brew 'zathura'
+brew 'zathura-pdf-poppler'
 brew 'zsh'
  
 # apps
