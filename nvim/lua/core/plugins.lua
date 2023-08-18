@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
     -- Package manager
     use 'wbthomason/packer.nvim'
 
+    -- LaTeX syntax highlighting
+    use 'lervag/vimtex'
     -- Colorschemes
     use {
         'JoosepAlviste/palenightfall.nvim',

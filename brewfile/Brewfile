@@ -16,11 +16,11 @@ brew 'wget'
 brew 'zathura'
 brew 'zathura-pdf-poppler'
 brew 'zsh'
- 
 # apps
 cask_args appdir: '/Applications'
 cask 'brave-browser'
 cask 'discord'
 cask 'github'
 cask 'iterm2'
+cask 'mactex-no-gui'
 cask 'visual-studio-code'
