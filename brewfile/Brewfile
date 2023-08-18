@@ -1,21 +1,26 @@
 # taps
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
+tap 'zegervdv/zathura'
 
 # packages
 brew 'bat'
+brew 'cmake'
 brew 'exa'
 brew 'git'
 brew 'neovim'
+brew 'pkg-config'
 brew 'ripgrep'
 brew 'romkatv/powerlevel10k/powerlevel10k'
 brew 'wget'
+brew 'zathura'
+brew 'zathura-pdf-poppler'
 brew 'zsh'
- 
 # apps
 cask_args appdir: '/Applications'
 cask 'brave-browser'
 cask 'discord'
 cask 'github'
 cask 'iterm2'
+cask 'mactex-no-gui'
 cask 'visual-studio-code'
