@@ -1,6 +1,7 @@
 # n/vim
 *~
 *.swp
+nvim/plugin/
 
 # macos
 .DS_Store
