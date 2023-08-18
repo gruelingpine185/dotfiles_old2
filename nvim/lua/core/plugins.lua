@@ -28,6 +28,14 @@ return require('packer').startup(function(use)
 
     -- LaTeX syntax highlighting
     use 'lervag/vimtex'
+
+    -- Status bar
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function() require('plugins.lualine') end
+    }
+
     -- Colorschemes
     use {
         'JoosepAlviste/palenightfall.nvim',
