@@ -24,3 +24,4 @@ fi
 # Create symlink for nvim config
 echo "Linking $(dirname ${DIR})/nvim -> ${config_path}/nvim"
 ln -s "$(realpath $(dirname ${DIR})/nvim)" "${config_path}/nvim"
+
