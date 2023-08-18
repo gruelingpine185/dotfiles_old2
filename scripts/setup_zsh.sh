@@ -46,5 +46,3 @@ for file in $(ls "$zsh_dot_path"); do
     echo "Linking ${zsh_dot_path}/${file} -> ${HOME}/.${file}"
     ln -s "$(realpath ${zsh_dot_path}/${file})" "${HOME}/.${file}"
 done
-
-echo "Done"

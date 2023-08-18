@@ -30,4 +30,3 @@ ln -s "$(realpath ${dot_brew_path}/Brewfile)" "${HOME}/.Brewfile"
 
 # Install packages, casks, etc.
 brew bundle --global
-echo "Done"

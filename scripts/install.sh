@@ -9,3 +9,4 @@ fi
 
 . "${DIR}/setup_homebrew.sh"
 . "${DIR}/setup_zsh.sh"
+. "${DIR}/setup_neovim.sh"
