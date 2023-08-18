@@ -25,3 +25,8 @@ fi
 echo "Linking $(dirname ${DIR})/nvim -> ${config_path}/nvim"
 ln -s "$(realpath $(dirname ${DIR})/nvim)" "${config_path}/nvim"
 
+# Linking Zathura plugins
+echo "Linking $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib -> $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib"
+mkdir -p "$(brew --prefix zathura)/lib/zathura"
+ln -s "$(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib" \
+    "$(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib"
