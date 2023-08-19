@@ -29,6 +29,12 @@ return require('packer').startup(function(use)
     -- LaTeX syntax highlighting
     use 'lervag/vimtex'
 
+    -- Start screen
+    use {
+        'goolord/alpha-nvim',
+        config = function() require('plugins.alpha') end
+    }
+
     -- Status bar
     use {
         'nvim-lualine/lualine.nvim',
