@@ -1,0 +1,79 @@
+:root {
+    --bg: #24283a !important;
+    --bg2: #6b739a !important;
+    --fg: #bec7d6 !important;
+    --header: #ffcb6b !important;
+    --link: #c3e88d !important;
+    --link-hover: #829c5c !important;
+    --link-active: #3690f8 !important;
+    --input-bg: #292d3f !important;
+    --svg-bg: transparent !important;
+    --transparent: transparent !important;
+    --inherit: inherit !important;
+}
+
+
+*,
+div#content {
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+h1, h2, h3, h4, h5, h6, h2 > a, span:not(*) {
+    color: var(--header);
+}
+
+textarea,
+code {
+    background-color: var(--input-bg);
+    border-radius: 1px solid var(--bg2);
+}
+
+section ~ section {
+    background-color: var(--bg);
+}
+
+section {
+    border: none !important;
+}
+
+li > a > * {
+    background-color: var(--transparent);
+}
+
+div >span,
+summary > span,
+span + span,
+pre > code,
+span > svg,
+div > div {
+    background-color: var(--inherit);
+}
+
+p {
+    color: var(--fg);
+}
+
+li > a,
+div > a,
+span > a,
+a > span,
+a:hover {
+    color: var(--link-hover);
+}
+
+a:active {
+    color: var(--link-active);
+}
+
+li > a,
+div > a,
+span > a,
+a > span,
+a {
+    color: var(--link);
+}
+
+svg {
+    background-color: var(--transparent);
+}
