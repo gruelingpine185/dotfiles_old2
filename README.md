@@ -1,6 +1,6 @@
 # Dotfiles
 
-![VS Code on Ventua background](./assets/vscode.png)
+![Apps with Palenight theme](./assets/palenight-setup.png)
 
 Behold; The latest rewrite of my dotfile configuration! These dotfiles are not permanent, so expect them to change over time. The purpose of this rewrite is to centralize my configuration in one place while still allowing flexibility.
 
@@ -25,7 +25,7 @@ At this time, there isn't an uninstallation script written. If your feeling brav
 
 ## Screenshots
 
-Coming soon!
+![VS Code on Ventua background](./assets/vscode.png)
 
 ## Contributions
 
