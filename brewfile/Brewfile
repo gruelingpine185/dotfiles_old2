@@ -8,6 +8,7 @@ brew 'bat'
 brew 'cmake'
 brew 'exa'
 brew 'git'
+brew 'mas'
 brew 'neovim'
 brew 'pkg-config'
 brew 'ripgrep'
@@ -16,6 +17,7 @@ brew 'wget'
 brew 'zathura'
 brew 'zathura-pdf-poppler'
 brew 'zsh'
+
 # apps
 cask_args appdir: '/Applications'
 cask 'brave-browser'
@@ -24,3 +26,6 @@ cask 'github'
 cask 'iterm2'
 cask 'mactex-no-gui'
 cask 'visual-studio-code'
+
+# apps from app store
+mas 'ColorSlurp', id: 1287239339
