@@ -5,6 +5,7 @@ tap 'zegervdv/zathura'
 
 # packages
 brew 'bat'
+brew 'bear'
 brew 'cmake'
 brew 'exa'
 brew 'git'
