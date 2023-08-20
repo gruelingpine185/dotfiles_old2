@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
         config = function() require('plugins.alpha') end
     }
 
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+
     -- Status bar
     use {
         'nvim-lualine/lualine.nvim',
