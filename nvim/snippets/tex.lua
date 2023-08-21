@@ -79,11 +79,11 @@ return {
     -- Lists
     s(
         {trig = 'li', dscr = 'List item'},
-        {t('\\item')}
+        {t('\\item ')}
     ),
     s(
         {trig = 'lit', dscr = 'List item (tagged)'},
-        fmta('\\item[<>] ', {i(1, 'tag')})
+        fmta('\\item[<>] <>', {i(1, 'tag'), i(2)})
     ),
 
     -- Environments
