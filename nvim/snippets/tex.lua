@@ -160,5 +160,27 @@ return {
             ]],
             {i(1, 'math')}
         )
+    ),
+
+    -- Math
+    s(
+        {trig = 's', dscr = 'Set with set builder notation'},
+        fmta('\\{\\, <>\\,\\}', {i(1)})
+    ),
+    s(
+        {trig = 's>=', dscr = 'Expands set notation [x, \\infty)'},
+        fmta('[\\, <>, \\infty\\,)', {i(1)})
+    ),
+    s(
+        {trig = 's<=', dscr = 'Expands set notation (\\infty, x]'},
+        fmta('(\\infty, <>\\,)', {i(1)})
+    ),
+    s(
+        {trig = 'si', dscr = 'Set inclusive (x, y)'},
+        fmta('[\\, <>, <>\\,]', {i(1), i(2)})
+    ),
+    s(
+        {trig = 'sx', dscr = 'Set exclusive (x, y)'},
+        fmta('(\\, <>, <>\\,)', {i(1), i(2)})
     )
 }
