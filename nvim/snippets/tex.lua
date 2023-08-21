@@ -76,6 +76,28 @@ return {
         fmta('``<>\'\'', i(1))
     ),
 
+    -- Markup
+    s(
+        {trig = 'sec', dscr = 'Create section'},
+        fmta(
+            [[
+                \section{<>}
+                    <>
+            ]],
+            {i(1, 'title'), i(2)}
+        )
+    ),
+    s(
+        {trig = 'ssec', dscr = 'Create section'},
+        fmta(
+            [[
+                \subsection{<>}
+                    <>
+            ]],
+            {i(1, 'title'), i(2)}
+        )
+    ),
+
     -- Lists
     s(
         {trig = 'li', dscr = 'List item'},
