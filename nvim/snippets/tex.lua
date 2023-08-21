@@ -102,7 +102,7 @@ return {
         fmta(
             [[
                 \begin{enumerate}
-                    \list <>
+                    \item <>
                 \end{enumerate}
             ]],
             {i(1)}
@@ -113,7 +113,7 @@ return {
         fmta(
             [[
                 \begin{itemize}
-                    \list <>
+                    \item <>
                 \end{itemize}
             ]],
             {i(1)}
@@ -124,7 +124,7 @@ return {
         fmta(
             [[
                 \begin{description}
-                    \list[<>] <>
+                    \item[<>] <>
                 \end{description}
             ]],
             {i(1, 'tag'), i(2)}
