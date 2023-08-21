@@ -27,6 +27,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- this part is telling Neovim to use the lsp server
 local servers = {
     'clangd',
@@ -34,10 +35,11 @@ local servers = {
 }
 
 for _, lsp in pairs(servers) do
-    require('lspconfig')[lsp].setup {
+    require('lspconfig')[lsp].setup({
+        capabilities = capabilities,
         on_attach = on_attach,
         flags = {debounce_text_changes = 150}
-    }
+    })
 end
 
 -- this is for diagnositcs signs on the line number column

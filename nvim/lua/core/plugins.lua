@@ -35,6 +35,25 @@ return require('packer').startup(function(use)
         config = function() require('plugins.alpha') end
     }
 
+    
+    -- Snippet engine
+    use {
+        'L3MON4D3/LuaSnip',
+        tag = 'v2.*',
+        config = function() require('plugins.luasnip') end
+    }
+    
+    -- Autocompletion
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function() require('plugins.cmp') end
+    }
+    
+    use 'saadparwaiz1/cmp_luasnip'
     -- LSP
     use 'neovim/nvim-lspconfig'
 
