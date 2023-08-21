@@ -89,9 +89,9 @@ return {
         {trig = 'bm', dscr = 'Begin display math environment'},
         fmta(
             [[
-                \[\[
+                \begin{displaymath}
                     <>
-                \]\]
+                \end{displaymath}
             ]],
             {i(1, 'math')}
         )
