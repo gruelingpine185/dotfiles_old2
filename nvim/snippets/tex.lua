@@ -59,6 +59,22 @@ return {
             '\\let \\epsilon \\varepsilon'
         })}
     ),
+    s(
+        {trig = 'it', dscr = 'Italic text'},
+        fmta('\\textit{<>}', {i(1)})
+    ),
+    s(
+        {trig = 'bf', dscr = 'Bold text'},
+        fmta('\\textbf{<>}', {i(1)})
+    ),
+    s(
+        {trig = '\'', dscr = 'Single quotes'},
+        fmta('`<>\'', i(1))
+    ),
+    s(
+        {trig = '"', dscr = 'Double quotes'},
+        fmta('``<>\'\'', i(1))
+    ),
 
     -- Lists
     s(
