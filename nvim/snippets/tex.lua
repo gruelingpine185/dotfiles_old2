@@ -11,6 +11,55 @@ local rep = require("luasnip.extras").rep
 
 
 return {
+    -- General
+    s(
+        {trig = '!', dscr = 'Create outline template'},
+        fmta(
+            [[
+                \documentclass{<>}
+
+                \input{preamble}
+                \title{<>}
+                \author{Adrian Bostic}
+                \date{\today}
+
+
+                \begin{document}
+                    \maketitle
+
+                    <>
+                \end{document}
+            ]],
+            {i(1, 'class'), i(2, 'title'), i(3)}
+        )
+    ),
+    s(
+        {trig = '!!', dscr = 'Create preamble template'},
+        {t({
+            '% Language & encoding',
+            '\\usepackage[utf8]{inputenc}',
+            '\\usepackage[T1]{fontenc}',
+            '\\usepackage[english]{babel}',
+            '',
+            '% Math',
+            '\\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}',
+            '\\usepackage{mathrsfs}',
+            '\\usepackage{bm}',
+            '',
+            '\\newcommand{\\N}{\\ensuremath{\\mathbb{N}}}',
+            '\\newcommand{\\R}{\\ensuremath{\\mathbb{R}}}',
+            '\\newcommand{\\Z}{\\ensuremath{\\mathbb{Z}}}',
+            '\\newcommand{\\Q}{\\ensuremath{\\mathbb{Q}}}',
+            '\\newcommand{\\C}{\\ensuremath{\\mathbb{C}}}',
+            '',
+            '% Make characters shorter',
+            '\\let \\implies \\Rightarrow',
+            '\\let \\impliedby \\Leftarrow',
+            '\\let \\iff \\Leftrightarrow',
+            '\\let \\epsilon \\varepsilon'
+        })}
+    ),
+
     -- Lists
     s(
         {trig = 'li', dscr = 'List item'},
