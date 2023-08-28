@@ -20,6 +20,7 @@ brew 'texlab'
 brew 'wget'
 brew 'zathura'
 brew 'zathura-pdf-poppler'
+brew 'zoxide'
 brew 'zsh'
 
 # apps
