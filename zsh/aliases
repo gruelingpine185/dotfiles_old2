@@ -1,0 +1,4 @@
+alias ls="exa"
+alias cat="bat"
+alias vim="nvim"
+alias make="bear -- make"
