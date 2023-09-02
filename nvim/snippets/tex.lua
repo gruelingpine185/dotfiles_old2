@@ -204,5 +204,13 @@ return {
     s(
         {trig = 'sx', dscr = 'Set exclusive (x, y)'},
         fmta('(\\, <>, <>\\,)', {i(1), i(2)})
+    ),
+    s(
+        {trig = 'fn', dscr = 'Expands f(x)'},
+        fmta('<>(<>)', {i(1, 'f'), i(2, 'x')})
+    ),
+    s(
+        {trig = 'f/g', dscr = 'Expands a fraction'},
+        fmta('\\frac{<>}{<>}', {i(1, 'y'), i(2, 'x')})
     )
 }
