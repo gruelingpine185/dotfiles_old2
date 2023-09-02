@@ -30,7 +30,7 @@ fi
 
 # List of Zsh files that would go in $HOME. These files should not be prefixed
 # with '.'.
-zsh_home_files="zshrc zprofile pk10k.zsh"
+zsh_home_files="aliases zshrc zprofile pk10k.zsh"
 
 # Path to Zsh config folder.
 zsh_dot_path="$(dirname ${DIR})/zsh"
