@@ -16,28 +16,8 @@ return {
         {trig = 'inc', dscr = 'Local include'},
         fmta('#include \"<>\"', {i(1, 'header')})
     ),
-    -- s(
-    --     {trig = 'Inc', dscr = 'External include'},
-    --     fmt('#include <()>', {i(1, 'header')}),
-    --     {delimiters = '()'}
-    -- ),
     s(
-        {trig = 'cpp', dscr = 'Extern C guards for C++'},
-        fmta(
-            [[
-                #ifdef __cplusplus
-                extern "C" {
-                #endif // __cplusplus
-                <>
-                #ifdef __cplusplus
-                }
-                #endif // __cplusplus
-            ]],
-            {i(1)}
-        )
-    ),
-    s(
-        {trig = 'grd', dscr = 'Header guards'},
+        {trig = '!', dscr = 'Header guards'},
         fmta(
             [[
                 #ifndef <>
@@ -51,4 +31,19 @@ return {
             {i(1, 'macro'), rep(1), i(2), rep(1)}
         )
     )
+    s(
+        {trig = '!!', dscr = 'Extern C guards for C++'},
+        fmta(
+            [[
+                #ifdef __cplusplus
+                extern "C" {
+                #endif // __cplusplus
+                <>
+                #ifdef __cplusplus
+                }
+                #endif // __cplusplus
+            ]],
+            {i(1)}
+        )
+    ),
 }
