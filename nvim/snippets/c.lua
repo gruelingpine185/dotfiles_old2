@@ -30,7 +30,7 @@ return {
             ]],
             {i(1, 'macro'), rep(1), i(2), rep(1)}
         )
-    )
+    ),
     s(
         {trig = '!!', dscr = 'Extern C guards for C++'},
         fmta(
