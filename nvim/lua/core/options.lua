@@ -12,7 +12,8 @@ local options = {
     expandtab = true,             -- convert tabs to spaces
     shiftwidth = 4,               -- number of spaces inserted for each indentation
     tabstop = 4,                  -- insert 2 spaces for a tab
-    number = true
+    number = true,
+    conceallevel = 2
 }
 
 local globals = {
@@ -21,6 +22,7 @@ local globals = {
 
     -- latex & vimtex
     tex_flavor = 'latex',
+    tex_conceal = 'abdmgs',
     Tex_DefaultTargetFormat = 'pdf',
     vimtex_view_method = 'zathura',
     vimtex_view_general_viewer = 'zathura',
