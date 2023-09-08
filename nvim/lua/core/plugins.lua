@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
         config = function() require('plugins.alpha') end
     }
 
+    use {
+        "folke/which-key.nvim",
+        config = function() require('which-key').setup() end
+    }
     
     -- Snippet engine
     use {
