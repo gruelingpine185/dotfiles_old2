@@ -191,6 +191,27 @@ return {
     s(
         {trig = 'bim', dscr = 'Begin inlined math environment'},
         fmta('$<>$', {i(1, 'math')})
+        {trig = 'beg', dscr = 'Begin example environment'}, -- custom
+        fmta(
+            [[
+                \begin{example}
+                    <>
+                \end{example}
+            ]],
+            {i(1)}
+        )
+    ),
+    s(
+        {trig = 'bdef', dscr = 'Begin definition environment'}, -- custom
+        fmta(
+            [[
+                \begin{definition}[<>]
+                    <>
+                \end{definition}
+            ]],
+            {i(1, 'def'), i(2)}
+        )
+    ),
     ),
     s(
         {trig = 'bm', dscr = 'Begin display math environment'},
