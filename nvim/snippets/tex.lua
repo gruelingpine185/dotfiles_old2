@@ -212,5 +212,8 @@ return {
     s(
         {trig = 'f/g', dscr = 'Expands a fraction'},
         fmta('\\frac{<>}{<>}', {i(1, 'y'), i(2, 'x')})
+        {trig = 'rt', dscr = 'Expands root', snippetType = 'autosnippet'},
+        fmta('\\sqrt[<>]{<>} ', {i(2, '2'), i(1, 'x')}),
+        {condition = in_mathzone}
     )
 }
