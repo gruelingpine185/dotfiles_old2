@@ -12,5 +12,5 @@ require('luasnip.loaders.from_lua').load({
 luasnip.config.set_config({
     history = true,
     update_events = 'TextChanged,TextChangedI',
-    enable_atuosnippets = true
+    enable_autosnippets = true
 })
