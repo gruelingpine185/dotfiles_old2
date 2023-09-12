@@ -86,11 +86,11 @@ return {
         fmta('\\textbf{<>}', {i(1)})
     ),
     s(
-        {trig = '\'', dscr = 'Single quotes'},
+        {trig = '\'', dscr = 'Single quotes', snippetType = 'autosnippet'},
         fmta('`<>\'', i(1))
     ),
     s(
-        {trig = '"', dscr = 'Double quotes'},
+        {trig = '"', dscr = 'Double quotes', snippetType = 'autosnippet'},
         fmta('``<>\'\'', i(1))
     ),
 
@@ -118,12 +118,14 @@ return {
 
     -- Lists
     s(
-        {trig = 'li', dscr = 'List item'},
-        {t('\\item ')}
+        {trig = '-', dscr = 'List item', snippetType = 'autosnippet'},
+        {t('\\item ')},
+        {condition = in_enumerate and line_begin}
     ),
     s(
-        {trig = 'lit', dscr = 'List item (tagged)'},
-        fmta('\\item[<>] <>', {i(1, 'tag'), i(2)})
+        {trig = '-', dscr = 'List item (tagged)', snippetType = 'autosnippet'},
+        fmta('\\item[<>] <>', {i(1, 'tag'), i(2)}),
+        {condition = in_description and line_begin}
     ),
 
     -- Environments
