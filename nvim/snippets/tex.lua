@@ -207,34 +207,48 @@ return {
     -- Math
     s(
         {trig = 's', dscr = 'Set with set builder notation'},
-        fmta('\\{\\, <>\\,\\}', {i(1)})
+        fmta('\\{\\, <>\\,\\}', {i(1)}),
+        {condition = in_mathzone}
     ),
     s(
         {trig = 's>=', dscr = 'Expands set notation [x, \\infty)'},
-        fmta('[\\, <>, \\infty\\,)', {i(1)})
+        fmta('[\\, <>, \\infty\\,)', {i(1)}),
+        {condition = in_mathzone}
     ),
     s(
         {trig = 's<=', dscr = 'Expands set notation (\\infty, x]'},
-        fmta('(\\infty, <>\\,)', {i(1)})
+        fmta('(\\infty, <>\\,)', {i(1)}),
+        {condition = in_mathzone}
     ),
     s(
         {trig = 'si', dscr = 'Set inclusive (x, y)'},
-        fmta('[\\, <>, <>\\,]', {i(1), i(2)})
+        fmta('[\\, <>, <>\\,]', {i(1), i(2)}),
+        {condition = in_mathzone}
     ),
     s(
         {trig = 'sx', dscr = 'Set exclusive (x, y)'},
-        fmta('(\\, <>, <>\\,)', {i(1), i(2)})
+        fmta('(\\, <>, <>\\,)', {i(1), i(2)}),
+        {condition = in_mathzone}
+    ),
     s(
         {trig = 'f', dscr = 'Expands f(x)'},
         fmta('<>(<>)', {i(1, 'f'), i(2, 'x')}),
         {condition = in_mathzone}
     ),
     s(
+        {trig = 'fo', dscr = 'Expands f(x) circle g(x)', snippetType = 'autosnippet'},
+        fmta('<>(<>) \\circ <>(<>)', {i(1, 'f'), i(2, 'x'), i(3, 'g'), i(4, 'x')}),
+        {condition = in_mathzone}
+    ),
     s(
         {trig = 'ff', dscr = 'Expands a fraction', snippetType = 'autosnippet'},
         fmta('\\frac{<>}{<>}', {i(1, 'y'), i(2, 'x')}),
         {condition = in_mathzone}
     ),
+    s(
+        {trig = 'pm', dscr = 'Expands plus or minus', snippetType = 'autosnippet'},
+        t('\\pm '),
+        {condition = in_mathzone}
     ),
     s(
         {trig = 'rt', dscr = 'Expands root', snippetType = 'autosnippet'},
