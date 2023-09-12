@@ -39,6 +39,16 @@ return require('packer').startup(function(use)
         "folke/which-key.nvim",
         config = function() require('which-key').setup() end
     }
+
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function() require('octo').setup() end
+    }
     
     -- Snippet engine
     use {
