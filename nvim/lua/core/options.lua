@@ -53,6 +53,12 @@ keymap('', '<ESC>', ':nohls<CR>', opts)
 -- TODO: Get a better fix than https://github.com/lervag/vimtex/issues/2203
 
 
+-- Telescope
+keymap('n', '<leader>b', ':Telescope buffers<CR>', opts)
+keymap('n', '<leader>t', ':Telescope colorscheme<CR>', opts)
+keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+keymap('n', '<leader>f', ':Telescope live_grep<CR>', opts)
+
 -- Vimtex
 keymap('n', '<localleader>v', ':call jobstart(\'zathura main.pdf\')<CR>', opts)  -- open zathura
 keymap('n', '<localleader>c', ':VimtexCompile<CR>', opts)   -- compiles files
