@@ -9,6 +9,24 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
+local in_mathzone = function()
+    return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
+local in_env = function(env)
+    local inside = vim.fn['vimtex#syntax#is_inside'](env)
+    return (inside[1] > 0 and inside[2] > 0)
+end
+
+local in_enumerate = function()
+    return in_env('enumerate')
+end
+
+local in_description = function()
+    return in_env('description')
+end
 
 return {
     -- General
