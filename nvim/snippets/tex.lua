@@ -86,6 +86,10 @@ return {
         fmta('\\textbf{<>}', {i(1)})
     ),
     s(
+        {trig = 'tt', dscr = 'regular text'},
+        fmta('\\text{<>}', {i(1)})
+    ),
+    s(
         {trig = '\'', dscr = 'Single quotes', snippetType = 'autosnippet'},
         fmta('`<>\'', i(1))
     ),
