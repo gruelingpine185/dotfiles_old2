@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
         config = function() require('plugins.cmp') end
     }
-    
+
     use 'saadparwaiz1/cmp_luasnip'
     -- LSP
     use 'neovim/nvim-lspconfig'
