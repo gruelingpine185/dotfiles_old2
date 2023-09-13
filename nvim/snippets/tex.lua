@@ -97,6 +97,18 @@ return {
         {trig = '"', dscr = 'Double quotes', snippetType = 'autosnippet'},
         fmta('``<>\'\'', i(1))
     ),
+    s(
+        {trig = '(', dscr = 'Parenthesis', snippetType = 'autosnippet'},
+        fmta('(<>)', i(1))
+    ),
+    s(
+        {trig = '[', dscr = 'Square brackets', snippetType = 'autosnippet'},
+        fmta('[<>]', i(1))
+    ),
+    s(
+        {trig = '{', dscr = 'Curly braces', snippetType = 'autosnippet'},
+        fmta('{<>}', i(1))
+    ),
 
     -- Markup
     s(
@@ -278,6 +290,59 @@ return {
     s(
         {trig = 'rt', dscr = 'Expands root', snippetType = 'autosnippet'},
         fmta('\\sqrt[<>]{<>} ', {i(2, '2'), i(1, 'x')}),
+        {condition = in_mathzone}
+    s(
+        {trig = '(.)-', dscr = 'Expands minus sign', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ' - ' end),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.)+', dscr = 'Expands plus sign', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ' + ' end),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.)*', dscr = 'Expands multiplication sign', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ' \\cdot ' end),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.)/', dscr = 'Expands division sign', snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ' / ' end),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'dlr([%[%(%{])', dscr = 'Expands dynamic separator groups', regTrig = true, snippetType = 'autosnippet'},
+        fmta('<>',
+            c(
+                1,
+                {
+                    sn(nil, {t('\\left('), i(1), t('\\right)')}),
+                    sn(nil, {t('\\left['), i(1), t('\\right]')}),
+                    sn(nil, {t('\\left{'), i(1), t('\\right}')})
+                }
+            )
+        ),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'lr([%[%(])', dscr = 'Expands separator groups', regTrig = true, snippetType = 'autosnippet'},
+        fmta('<>',
+            c(
+                1,
+                {
+                    sn(nil, {t('('), i(1), t(')')}),
+                    sn(nil, {t('('), i(1), t(']')}),
+                    sn(nil, {t('['), i(1), t(']')}),
+                    sn(nil, {t('['), i(1), t(')')}),
+                }
+            )
+        ),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.),', dscr = 'Expands comma with space', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ', ' end),
         {condition = in_mathzone}
     )
 }
