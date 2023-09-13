@@ -9,10 +9,15 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
+
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 local in_mathzone = function()
     return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
+local in_textzone = function()
+    return in_mathzone() == 0
 end
 
 local in_env = function(env)
@@ -49,7 +54,8 @@ return {
                 \end{document}
             ]],
             {i(1, 'class'), i(2, 'title'), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = '!!', dscr = 'Create preamble template'},
@@ -75,7 +81,8 @@ return {
             '\\let \\impliedby \\Leftarrow',
             '\\let \\iff \\Leftrightarrow',
             '\\let \\epsilon \\varepsilon'
-        })}
+        })},
+        {condition = in_textzone}
     ),
     s(
         {trig = 'it', dscr = 'Italic text'},
@@ -119,7 +126,8 @@ return {
                     <>
             ]],
             {i(1, 'title'), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'ssec', dscr = 'Create section'},
@@ -129,7 +137,8 @@ return {
                     <>
             ]],
             {i(1, 'title'), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
 
     -- Lists
@@ -147,7 +156,8 @@ return {
     -- Environments
     s(
         {trig = 'dc', dscr = 'Document class'},
-        fmta('\\documentclass{<>}', {i(1, 'class')})
+        fmta('\\documentclass{<>}', {i(1, 'class')}),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'bd', dscr = 'Begin Document environment'},
@@ -158,7 +168,8 @@ return {
                 \end{document}
             ]],
             {i(1)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'be', dscr = 'Begin environment'},
@@ -202,11 +213,10 @@ return {
                 \end{description}
             ]],
             {i(1, 'tag'), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
-        {trig = 'bim', dscr = 'Begin inlined math environment'},
-        fmta('$<>$', {i(1, 'math')})
         {trig = 'beg', dscr = 'Begin example environment'}, -- custom
         fmta(
             [[
@@ -226,8 +236,8 @@ return {
                 \end{definition}
             ]],
             {i(1, 'def'), i(2)}
-        )
-    ),
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'bm', dscr = 'Begin display math environment'},
@@ -238,10 +248,30 @@ return {
                 \end{displaymath}
             ]],
             {i(1, 'math')}
-        )
+        ),
+        {condition = in_textzone}
     ),
-
+    s(
+        {trig = 'mm', dscr = 'Begin display math environment', snippetType = 'autosnippet'},
+        fmta('$<>$ ', {i(1)}),
+        {condition = in_textzone}
+    ),
     -- Math
+    s(
+        {trig = 'oo', dscr = 'Expands infinity', snippetType = 'autosnippet'},
+        t('\\infty'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '\\inftyl', dscr = 'Expands infinity', snippetType = 'autosnippet'},
+        t('\\infty^{+}'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '\\inftyr', dscr = 'Expands infinity', snippetType = 'autosnippet'},
+        t('\\infty^{-}'),
+        {condition = in_mathzone}
+    ),
     s(
         {trig = 's', dscr = 'Set with set builder notation'},
         fmta('\\{\\, <>\\,\\}', {i(1)}),
@@ -268,7 +298,7 @@ return {
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'f', dscr = 'Expands f(x)'},
+        {trig = 'fn', dscr = 'Expands f(x)', snippetType = 'autosnippet'},
         fmta('<>(<>)', {i(1, 'f'), i(2, 'x')}),
         {condition = in_mathzone}
     ),
@@ -291,6 +321,7 @@ return {
         {trig = 'rt', dscr = 'Expands root', snippetType = 'autosnippet'},
         fmta('\\sqrt[<>]{<>} ', {i(2, '2'), i(1, 'x')}),
         {condition = in_mathzone}
+    ),
     s(
         {trig = '(.)-', dscr = 'Expands minus sign', regTrig = true, snippetType = 'autosnippet'},
         f(function(args, snip) return snip.captures[1] .. ' - ' end),
@@ -341,8 +372,21 @@ return {
         {condition = in_mathzone}
     ),
     s(
+        {trig = '(.)to', dscr = 'Expands approaches (\\to)', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. ' \\to ' end),
+        {condition = in_mathzone}
+    ),
+    s(
         {trig = '(.),', dscr = 'Expands comma with space', regTrig = true, snippetType = 'autosnippet'},
         f(function(args, snip) return snip.captures[1] .. ', ' end),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.)lim', dscr = 'Expands limit', regTrig = true, snippetType = 'autosnippet'},
+        fmta(
+            '<>\\lim_{<>}{<>}',
+            {f(function(args, snip) return snip.captures[1] end), i(1), i(2)}
+        ),
         {condition = in_mathzone}
     )
 }
