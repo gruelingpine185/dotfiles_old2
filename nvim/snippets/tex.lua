@@ -220,9 +220,20 @@ return {
         {trig = 'beg', dscr = 'Begin example environment'}, -- custom
         fmta(
             [[
-                \begin{example}
+                \begin{example}[<>
                     <>
                 \end{example}
+            ]],
+            {i(1), i(2)}
+        )
+    ),
+    s(
+        {trig = 'ba', dscr = 'Begin align environment'},
+        fmta(
+            [[
+                \begin{align}
+                    <>
+                \end{align}
             ]],
             {i(1)}
         )
@@ -253,8 +264,8 @@ return {
     ),
     s(
         {trig = 'mm', dscr = 'Begin display math environment', snippetType = 'autosnippet'},
-        fmta('$<>$ ', {i(1)}),
-        {condition = in_textzone}
+        fmta('$<>$ ', {i(1)})
+        -- {condition = in_textzone}
     ),
     -- Math
     s(
@@ -270,11 +281,6 @@ return {
     s(
         {trig = '\\inftyr', dscr = 'Expands infinity', snippetType = 'autosnippet'},
         t('\\infty^{-}'),
-        {condition = in_mathzone}
-    ),
-    s(
-        {trig = 's', dscr = 'Set with set builder notation'},
-        fmta('\\{\\, <>\\,\\}', {i(1)}),
         {condition = in_mathzone}
     ),
     s(
@@ -304,11 +310,11 @@ return {
     ),
     s(
         {trig = 'fo', dscr = 'Expands f(x) circle g(x)', snippetType = 'autosnippet'},
-        fmta('<>(<>) \\circ <>(<>)', {i(1, 'f'), i(2, 'x'), i(3, 'g'), i(4, 'x')}),
+        fmta('<> \\circ <>', {i(1, 'f'), i(2, 'g')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'ff', dscr = 'Expands a fraction', snippetType = 'autosnippet'},
+        {trig = '/', dscr = 'Expands a fraction', snippetType = 'autosnippet'},
         fmta('\\frac{<>}{<>}', {i(1, 'y'), i(2, 'x')}),
         {condition = in_mathzone}
     ),
@@ -320,6 +326,11 @@ return {
     s(
         {trig = 'rt', dscr = 'Expands root', snippetType = 'autosnippet'},
         fmta('\\sqrt[<>]{<>} ', {i(2, '2'), i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '-([A-Za-z%d])', dscr = 'Expands negative sign', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return ' -' .. snip.captures[1] end),
         {condition = in_mathzone}
     ),
     s(
@@ -387,6 +398,36 @@ return {
             '<>\\lim_{<>}{<>}',
             {f(function(args, snip) return snip.captures[1] end), i(1), i(2)}
         ),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '([^%s]+)p(-?[A-Za-z%d]+)', dscr = 'Expands exponent', regTrig = true, snippetType = 'autosnippet'},
+        {f(function(args, snip) return snip.captures[1] .. '^{' .. snip.captures[2] .. '}' end)},
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '!=', dscr = 'Expands inqeuivelance symbol', snippetType = 'autosnippet'},
+        t(' \\neq '),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'apx', dscr = 'Expands approximation symbol', snippetType = 'autosnippet'},
+        t(' \\approx'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'lg', dscr = 'Expands log function', snippetType = 'autosnippet'},
+        fmta('\\log_{<>} <>', {i(1), i(2)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'ln', dscr = 'Expands ln function', snippetType = 'autosnippet'},
+        fmta('\\ln <> ', {i(1)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(%d+)deg', dscr = 'Expands degree symbol', regTrig = true, snippetType = 'autosnippet'},
+        {f(function(args, snip) return snip.captures[1] .. '\\degree' end)},
         {condition = in_mathzone}
     )
 }
