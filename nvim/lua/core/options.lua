@@ -58,6 +58,7 @@ keymap('n', '<leader>b', ':Telescope buffers<CR>', opts)
 keymap('n', '<leader>t', ':Telescope colorscheme<CR>', opts)
 keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>f', ':Telescope live_grep<CR>', opts)
+keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 
 -- Vimtex
 keymap('n', '<localleader>v', ':call jobstart(\'zathura main.pdf\')<CR>', opts)  -- open zathura

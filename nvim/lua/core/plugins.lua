@@ -36,8 +36,21 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "folke/which-key.nvim",
+        'folke/which-key.nvim',
         config = function() require('which-key').setup() end
+    }
+
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = function() require('plugins.telescope') end
+    }
+
+    use {
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
+        }
     }
 
     use {
