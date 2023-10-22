@@ -72,3 +72,4 @@ keymap('n', '<a-up>', ':m .-2<CR>==', opts)             -- move like up
 keymap('v', '<a-down>', ':m \'>+1<CR>gv=gv', opts)      -- move block down
 keymap('v', '<a-up>', ':m \'<-2<CR>gv=gv', opts)        -- move block up
 
+vim.cmd('au BufRead,BufNewFile *.ejs set filetype=html')
