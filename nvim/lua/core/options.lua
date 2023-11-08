@@ -65,6 +65,13 @@ keymap('n', '<localleader>v', ':call jobstart(\'zathura main.pdf\')<CR>', opts) 
 keymap('n', '<localleader>c', ':VimtexCompile<CR>', opts)   -- compiles files
 keymap('n', '<localleader>l', ':VimtexClean<CR>', opts)     -- remove extra files
 
+-- True zen
+keymap('n', '<leader>zn', ':TZNarrow<CR>', {})
+keymap('v', '<leader>zn', ':\'<,\'>TZNarrow<CR>', {})
+keymap('n', '<leader>zf', ':TZFocus<CR>', {})
+keymap('n', '<leader>zm', ':TZMinimalist<CR>', {})
+keymap('n', '<leader>za', ':TZAtaraxis<CR>', {})
+
 keymap('i', '<a-down>', '<esc>:m .+1<CR>==gi', opts)    -- move line down
 keymap('i', '<a-up>', '<esc>:m .-2<CR>==gi', opts)      -- move line up
 keymap('n', '<a-down>', ':m .+1<CR>==', opts)           -- move line down

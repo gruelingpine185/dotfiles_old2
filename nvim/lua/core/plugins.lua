@@ -84,6 +84,14 @@ return require('packer').startup(function(use)
     -- LSP
     use 'neovim/nvim-lspconfig'
 
+    -- Zen mode
+    use {
+        'Pocco81/true-zen.nvim',
+        config = function()
+             require('true-zen').setup {}
+        end
+    }
+
     -- Status bar
     use {
         'nvim-lualine/lualine.nvim',
