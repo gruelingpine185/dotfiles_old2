@@ -429,5 +429,45 @@ return {
         {trig = '(%d+)deg', dscr = 'Expands degree symbol', regTrig = true, snippetType = 'autosnippet'},
         {f(function(args, snip) return snip.captures[1] .. '\\degree' end)},
         {condition = in_mathzone}
+    ),
+    s(
+        {trig = 't', dscr = 'Expands theta symbol'},
+        t('\\theta'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'sin', dscr = 'Expands sin symbol'},
+        fmta('\\sin <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'cos', dscr = 'Expands cosine symbol'},
+        fmta('\\cos <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'tan', dscr = 'Expands tangent symbol'},
+        fmta('\\tan <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'csc', dscr = 'Expands cosicant symbol'},
+        fmta('\\csc <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'sec', dscr = 'Expands secant symbol'},
+        fmta('\\sec <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'cot', dscr = 'Expands cotangent symbol'},
+        fmta('\\cot <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = '(.)pi', dscr = 'Expands pi symbol', regTrig = true, snippetType = 'autosnippet'},
+        {f(function(args, snip) return snip.captures[1] .. '\\pi' end)},
+        {condition = in_mathzone}
     )
 }
