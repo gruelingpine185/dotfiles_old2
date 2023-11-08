@@ -406,6 +406,11 @@ return {
         {condition = in_mathzone}
     ),
     s(
+        {trig = '([^%s]+)ss(-?[A-Za-z%d]+)', dscr = 'Expands subscript', regTrig = true, snippetType = 'autosnippet'},
+        {f(function(args, snip) return snip.captures[1] .. '_{' .. snip.captures[2] .. '}' end)},
+        {condition = in_mathzone}
+    ),
+    s(
         {trig = '!=', dscr = 'Expands inqeuivelance symbol', snippetType = 'autosnippet'},
         t(' \\neq '),
         {condition = in_mathzone}
