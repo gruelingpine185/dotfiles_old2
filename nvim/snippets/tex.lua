@@ -401,7 +401,7 @@ return {
         {condition = in_mathzone}
     ),
     s(
-        {trig = '([^%s]+)p(-?[A-Za-z%d]+)', dscr = 'Expands exponent', regTrig = true, snippetType = 'autosnippet'},
+        {trig = '([^%s]+)pp(-?[A-Za-z%d]+)', dscr = 'Expands exponent', regTrig = true, snippetType = 'autosnippet'},
         {f(function(args, snip) return snip.captures[1] .. '^{' .. snip.captures[2] .. '}' end)},
         {condition = in_mathzone}
     ),
