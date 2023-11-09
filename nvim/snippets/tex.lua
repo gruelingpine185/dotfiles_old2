@@ -471,6 +471,21 @@ return {
         {condition = in_mathzone}
     ),
     s(
+        {trig = 'asin', dscr = 'Expands arcsin symbol', snippetType = 'autosnippet'},
+        fmta('\\arcsin <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'acos', dscr = 'Expands arccosine symbol', snippetType = 'autosnippet'},
+        fmta('\\arccos <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'atan', dscr = 'Expands arctangent symbol', snippetType = 'autosnippet'},
+        fmta('\\arctan <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
         {trig = '(.)pi', dscr = 'Expands pi symbol', regTrig = true, snippetType = 'autosnippet'},
         {f(function(args, snip) return snip.captures[1] .. '\\pi' end)},
         {condition = in_mathzone}
