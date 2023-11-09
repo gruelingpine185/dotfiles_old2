@@ -441,32 +441,32 @@ return {
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'sin', dscr = 'Expands sin symbol'},
+        {trig = 'sin', dscr = 'Expands sin symbol', snippetType = 'autosnippet'},
         fmta('\\sin <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'cos', dscr = 'Expands cosine symbol'},
+        {trig = 'cos', dscr = 'Expands cosine symbol', snippetType = 'autosnippet'},
         fmta('\\cos <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'tan', dscr = 'Expands tangent symbol'},
+        {trig = 'tan', dscr = 'Expands tangent symbol', snippetType = 'autosnippet'},
         fmta('\\tan <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'csc', dscr = 'Expands cosicant symbol'},
+        {trig = 'csc', dscr = 'Expands cosicant symbol', snippetType = 'autosnippet'},
         fmta('\\csc <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'sec', dscr = 'Expands secant symbol'},
+        {trig = 'sec', dscr = 'Expands secant symbol', snippetType = 'autosnippet'},
         fmta('\\sec <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'cot', dscr = 'Expands cotangent symbol'},
+        {trig = 'cot', dscr = 'Expands cotangent symbol', snippetType = 'autosnippet'},
         fmta('\\cot <> ', {i(1, 'x')}),
         {condition = in_mathzone}
     ),
