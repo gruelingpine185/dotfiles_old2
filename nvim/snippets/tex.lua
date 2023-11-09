@@ -329,28 +329,19 @@ return {
         {condition = in_mathzone}
     ),
     s(
-        {trig = '-([A-Za-z%d])', dscr = 'Expands negative sign', regTrig = true, snippetType = 'autosnippet'},
-        f(function(args, snip) return ' -' .. snip.captures[1] end),
+        {trig = '([%(%[%{])-', dscr = 'Expands operator', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip) return snip.captures[1] .. '-' end),
         {condition = in_mathzone}
     ),
     s(
-        {trig = '(.)-', dscr = 'Expands minus sign', regTrig = true, snippetType = 'autosnippet'},
-        f(function(args, snip) return snip.captures[1] .. ' - ' end),
-        {condition = in_mathzone}
-    ),
-    s(
-        {trig = '(.)+', dscr = 'Expands plus sign', regTrig = true, snippetType = 'autosnippet'},
-        f(function(args, snip) return snip.captures[1] .. ' + ' end),
-        {condition = in_mathzone}
-    ),
-    s(
-        {trig = '(.)*', dscr = 'Expands multiplication sign', regTrig = true, snippetType = 'autosnippet'},
-        f(function(args, snip) return snip.captures[1] .. ' \\cdot ' end),
-        {condition = in_mathzone}
-    ),
-    s(
-        {trig = '(.)/', dscr = 'Expands division sign', snippetType = 'autosnippet'},
-        f(function(args, snip) return snip.captures[1] .. ' / ' end),
+        {trig = '([A-Za-z%d]?)([%+%-%*])', dscr = 'Expands operator', regTrig = true, snippetType = 'autosnippet'},
+        f(function(args, snip)
+            if snip.captures[2] == '*' then
+                return snip.captures[1] .. ' \\cdot '
+            end 
+
+            return snip.captures[1] .. ' ' .. snip.captures[2] .. ' '
+        end),
         {condition = in_mathzone}
     ),
     s(
