@@ -99,6 +99,9 @@ return require('packer').startup(function(use)
         config = function() require('plugins.lualine') end
     }
 
+    -- Git integration
+    use 'airblade/vim-gitgutter'
+
     -- Colorschemes
     use {
         'JoosepAlviste/palenightfall.nvim',
