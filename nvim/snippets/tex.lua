@@ -23,7 +23,7 @@ return {
     ),
     s(
         {
-            trig = '([%]])%)',
+            trig = '([%]])%]',
             dscr = 'Prevent extra close bracket',
             regTrig = true,
             snippetType = 'autosnippet'
@@ -32,7 +32,7 @@ return {
     ),
     s(
         {
-            trig = '([%}])%)',
+            trig = '([%}])%}',
             dscr = 'Prevent extra close brace',
             regTrig = true,
             snippetType = 'autosnippet'
