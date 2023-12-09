@@ -196,5 +196,13 @@ return {
     s(
         {trig = '\"', dscr = 'Expand double quote', snippetType = 'autosnippet'},
         fmta('``<>\'\'<>', {i(1), i(2)})
+    ),
+    s(
+        {
+            trig = 'mm',
+            dscr = 'Begin display math environment',
+            snippetType = 'autosnippet'
+        },
+        fmta('$<>$<>', {i(1), i(2)})
     )
 }
