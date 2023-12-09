@@ -11,7 +11,49 @@ local rep = require("luasnip.extras").rep
 
 
 return {
-    -- text mode (autosnippet)
+    -- general regex (autosnippets)
+    s(
+        {
+            trig = '([%(])%)',
+            dscr = 'Prevent extra close parenthesis',
+            regTrig = true, snippetType = 'autosnippet'
+        },
+        f(function(args, snip) return snip.captures[1] end)
+    ),
+    s(
+        {
+            trig = '([%]])%)',
+            dscr = 'Prevent extra close bracket',
+            regTrig = true,
+            snippetType = 'autosnippet'
+        },
+        f(function(args, snip) return snip.captures[1] end)
+    ),
+    s(
+        {
+            trig = '([%}])%)',
+            dscr = 'Prevent extra close brace',
+            regTrig = true,
+            snippetType = 'autosnippet'
+        },
+        f(function(args, snip) return snip.captures[1] end)
+    ),
+
+    -- general (autosnippets)
+    s(
+        {trig = '(', dscr = 'Expand parenthesis', snippetType = 'autosnippet'},
+        fmta('(<>)<>', {i(1), i(2)})
+    ),
+    s(
+        {trig = '[', dscr = 'Expand square brackets', snippetType = 'autosnippet'},
+        fmta('[<>]<>', {i(1), i(2)})
+    ),
+    s(
+        {trig = '{', dscr = 'Expand curly brace', snippetType = 'autosnippet'},
+        fmta('}<>}<>', {i(1), i(2)})
+    ),
+
+    -- text mode (autosnippets)
     s(
         {trig = '\'', dscr = 'Expand single quote', snippetType = 'autosnippet'},
         fmta('`<>\'<>', {i(1), i(2)})
