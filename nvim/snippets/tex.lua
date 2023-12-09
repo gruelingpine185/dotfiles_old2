@@ -16,7 +16,8 @@ return {
         {
             trig = '([%(])%)',
             dscr = 'Prevent extra close parenthesis',
-            regTrig = true, snippetType = 'autosnippet'
+            regTrig = true,
+            snippetType = 'autosnippet'
         },
         f(function(args, snip) return snip.captures[1] end)
     ),
