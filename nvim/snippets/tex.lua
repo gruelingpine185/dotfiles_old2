@@ -10,6 +10,15 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 
+local in_mathzone = function()
+    return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
+local in_textzone = function()
+    return in_mathzone() == 0
+end
+
+
 return {
     -- general regex (autosnippets)
     s(
