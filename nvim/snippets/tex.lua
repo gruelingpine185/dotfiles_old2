@@ -266,5 +266,120 @@ return {
             snippetType = 'autosnippet'
         },
         fmta('$<>$<>', {i(1), i(2)})
-    )
+    ),
+    
+    -- math mode (autosnippets)
+    s(
+        {
+            trig = 'acos',
+            dscr = 'Expands arccosine symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\arccos <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'asin',
+            dscr = 'Expands arcsin symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\arcsin <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'atan',
+            dscr = 'Expands arctangent symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\arctan <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'apx',
+            dscr = 'Expands approximation symbol',
+            snippetType = 'autosnippet'
+        },
+        t(' \\approx'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'cos',
+            dscr = 'Expands cosine symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\cos <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'cot',
+            dscr = 'Expands cotangent symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\cot <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'csc',
+            dscr = 'Expands cosicant symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\csc <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'sec',
+            dscr = 'Expands secant symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\sec <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'sin',
+            dscr = 'Expands sin symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\sin <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'tan',
+            dscr = 'Expands tangent symbol',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\tan <> ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {trig = 'oo', dscr = 'Expands infinity', snippetType = 'autosnippet'},
+        t('\\infty'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = '\\inftyl',
+            dscr = 'Expands infinity',
+            snippetType = 'autosnippet'
+        },
+        t('\\infty^{+}'),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = '\\inftyr',
+            dscr = 'Expands infinity',
+            snippetType = 'autosnippet'
+        },
+        t('\\infty^{-}'),
+        {condition = in_mathzone}
+    ),
 }
