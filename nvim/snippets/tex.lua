@@ -51,16 +51,28 @@ return {
 
     -- general (autosnippets)
     s(
-        {trig = '(', dscr = 'Expand parenthesis', snippetType = 'autosnippet'},
+        {
+            trig = '(',
+            dscr = 'Expand parenthesis',
+            snippetType = 'autosnippet'
+        },
         fmta('(<>)<>', {i(1), i(2)})
     ),
     s(
-        {trig = '[', dscr = 'Expand square brackets', snippetType = 'autosnippet'},
+        {
+            trig = '[',
+            dscr = 'Expand square brackets',
+            snippetType = 'autosnippet'
+        },
         fmta('[<>]<>', {i(1), i(2)})
     ),
     s(
-        {trig = '{', dscr = 'Expand curly brace', snippetType = 'autosnippet'},
-        fmta('}<>}<>', {i(1), i(2)})
+        {
+            trig = '{',
+            dscr = 'Expand curly brace',
+            snippetType = 'autosnippet'
+        },
+        fmta('{<>}<>', {i(1), i(2)})
     ),
 
     -- text mode
@@ -74,7 +86,8 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'beg', dscr = 'Begin example environment'},
@@ -86,7 +99,8 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'prf', dscr = 'Create proof'},
@@ -110,7 +124,8 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'prob', dscr = 'Create problem'},
@@ -122,7 +137,8 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
 
     s(
@@ -168,7 +184,8 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'ba', dscr = 'Begin align environment'},
@@ -180,7 +197,8 @@ return {
                 <>
             ]],
             {i(1), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'bm', dscr = 'Begin display math environment'},
@@ -192,7 +210,8 @@ return {
                 <>
             ]],
             {i(1), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'ol', dscr = 'Begin Ordered list'},
@@ -204,7 +223,8 @@ return {
                 <>
             ]],
             {i(1), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'ul', dscr = 'Begin Unordered list'},
@@ -216,17 +236,28 @@ return {
                 <>
             ]],
             {i(1), i(2)}
-        )
+        ),
+        {condition = in_textzone}
     ),
 
     -- text mode (autosnippets)
     s(
-        {trig = '\'', dscr = 'Expand single quote', snippetType = 'autosnippet'},
-        fmta('`<>\'<>', {i(1), i(2)})
+        {
+            trig = '\'',
+            dscr = 'Expand single quote',
+            snippetType = 'autosnippet'
+        },
+        fmta('`<>\'<>', {i(1), i(2)}),
+        {condition = in_textzone}
     ),
     s(
-        {trig = '\"', dscr = 'Expand double quote', snippetType = 'autosnippet'},
-        fmta('``<>\'\'<>', {i(1), i(2)})
+        {
+            trig = '\"',
+            dscr = 'Expand double quote',
+            snippetType = 'autosnippet'
+        },
+        fmta('``<>\'\'<>', {i(1), i(2)}),
+        {condition = in_textzone}
     ),
     s(
         {
