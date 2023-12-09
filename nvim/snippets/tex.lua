@@ -54,6 +54,20 @@ return {
         fmta('}<>}<>', {i(1), i(2)})
     ),
 
+    -- text mode
+    s(
+        {trig = 'beg', dscr = 'Begin example environment'},
+        fmta(
+            [[
+                \begin{example}[<>
+                    <>
+                \end{example}
+                <>
+            ]],
+            {i(1), i(2), i(3)}
+        )
+    ),
+
     -- text mode (autosnippets)
     s(
         {trig = '\'', dscr = 'Expand single quote', snippetType = 'autosnippet'},
