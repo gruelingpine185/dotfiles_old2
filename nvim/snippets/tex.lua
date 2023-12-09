@@ -125,7 +125,29 @@ return {
                 <>
             ]],
             {i(1, 'title'), i(2), i(3)}
-        )
+        ),
+        {condition = in_textzone}
+    ),
+    s(
+        {trig = 'tab', dscr = 'Create table'},
+        fmta(
+            [[
+                \begin{table}[h!]
+                    \centering
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        <>
+                        \hline
+                        \hline
+                        <>
+                        \hline
+                        \end{tabular}
+                \end{table}
+                <>
+            ]],
+            {i(1, 'names'), i(2), i(3)}
+        ),
+        {condition = in_textzone}
     ),
     s(
         {trig = 'thm', dscr = 'Create theorem'},
