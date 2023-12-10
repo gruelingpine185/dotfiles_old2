@@ -398,7 +398,29 @@ return {
         {condition = in_mathzone}
     ),
     s(
-        {trig = 'oo', dscr = 'Expands infinity', snippetType = 'autosnippet'},
+        {
+            trig = 'lg',
+            dscr = 'Expands log function',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\log_{<>} <> ', {i(1), i(2)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'ln',
+            dscr = 'Expands ln function',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\ln <> ', {i(1)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'oo',
+            dscr = 'Expands infinity',
+            snippetType = 'autosnippet'
+        },
         t('\\infty'),
         {condition = in_mathzone}
     ),
