@@ -268,6 +268,44 @@ return {
         fmta('$<>$<>', {i(1), i(2)})
     ),
     
+    -- math mode regex (autosnippets)
+    s(
+        {
+            trig = '(%d+)deg',
+            dscr = 'Expands nth degree symbol',
+            regTrig = true,
+            snippetType = 'autosnippet'
+        },
+        {f(function(args, snip)
+            return snip.captures[1] .. '\\degree ' end
+        )},
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = '([^%s]+)pp(-?[A-Za-z%d]+)',
+            dscr = 'Expands exponent',
+            regTrig = true,
+            snippetType = 'autosnippet'
+        },
+        {f(function(args, snip)
+            return snip.captures[1] .. '^{' .. snip.captures[2] .. '}'
+        end)},
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = '([^%s]+)ss(-?[A-Za-z%d]+)',
+            dscr = 'Expands subscript',
+            regTrig = true,
+            snippetType = 'autosnippet'
+        },
+        {f(function(args, snip)
+            return snip.captures[1] .. '_{' .. snip.captures[2] .. '}'
+        end)},
+        {condition = in_mathzone}
+    ),
+
     -- math mode (autosnippets)
     s(
         {
@@ -302,7 +340,7 @@ return {
             dscr = 'Expands approximation symbol',
             snippetType = 'autosnippet'
         },
-        t(' \\approx'),
+        t(' \\approx '),
         {condition = in_mathzone}
     ),
     s(
@@ -370,7 +408,7 @@ return {
             dscr = 'Expands infinity',
             snippetType = 'autosnippet'
         },
-        t('\\infty^{+}'),
+        t('\\infty^{+} '),
         {condition = in_mathzone}
     ),
     s(
@@ -379,7 +417,7 @@ return {
             dscr = 'Expands infinity',
             snippetType = 'autosnippet'
         },
-        t('\\infty^{-}'),
+        t('\\infty^{-} '),
         {condition = in_mathzone}
     ),
 }
