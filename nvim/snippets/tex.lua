@@ -393,6 +393,42 @@ return {
     ),
     s(
         {
+            trig = 'fa',
+            dscr = 'Expands forall',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\forall <>', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'ff',
+            dscr = 'Expands function f(x)',
+            snippetType = 'autosnippet'
+        },
+        fmta('f(<>) ', {i(1, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'fn',
+            dscr = 'Expands function',
+            snippetType = 'autosnippet'
+        },
+        fmta('<>(<>) ', {i(1, 'f'), i(2, 'x')}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'in',
+            dscr = 'Expands epsilon',
+            snippetType = 'autosnippet'
+        },
+        t('\\in '),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
             trig = 'lg',
             dscr = 'Expands log function',
             snippetType = 'autosnippet'
@@ -404,8 +440,8 @@ return {
         {
             trig = 'ln',
             dscr = 'Expands ln function',
-            snippetType = 'autosnippet'
-        },
+                snippetType = 'autosnippet'
+            },
         fmta('\\ln <> ', {i(1)}),
         {condition = in_mathzone}
     ),
@@ -420,20 +456,59 @@ return {
     ),
     s(
         {
-            trig = '\\inftyl',
-            dscr = 'Expands infinity',
+            trig = 'pp',
+            dscr = 'Expands superscript',
             snippetType = 'autosnippet'
         },
-        t('\\infty^{+} '),
+        fmta(' ^{<>} ', {i(1)}),
         {condition = in_mathzone}
     ),
     s(
         {
-            trig = '\\inftyr',
-            dscr = 'Expands infinity',
+            trig = 'ss',
+            dscr = 'Expands subscript',
             snippetType = 'autosnippet'
         },
-        t('\\infty^{-} '),
+        fmta(' _{<>} ', {i(1)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'to',
+            dscr = 'Expands approaches (\\to)',
+            snippetType = 'autosnippet'
+        },
+        t(' \\to '),
+        {condition = in_mathzone}
+    ),
+
+    -- math mode
+    s(
+        {
+            trig = 't',
+            dscr = 'Expands theta symbol'
+        },
+        t('\\theta '),
+        {condition = in_mathzone}
+    ),
+
+    -- math operators (autosnippets)
+    s(
+        {
+            trig = '!=',
+            dscr = 'Expands inqeuivelance symbol',
+            snippetType = 'autosnippet'
+        },
+        t('\\neq '),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = '=',
+            dscr = 'Expands equal sign',
+            snippetType = 'autosnippet'
+        },
+        t('= '),
         {condition = in_mathzone}
     ),
 }
