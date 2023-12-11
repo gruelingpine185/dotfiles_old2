@@ -281,30 +281,6 @@ return {
         )},
         {condition = in_mathzone}
     ),
-    s(
-        {
-            trig = '([^%s]+)pp(-?[A-Za-z%d]+)',
-            dscr = 'Expands exponent',
-            regTrig = true,
-            snippetType = 'autosnippet'
-        },
-        {f(function(args, snip)
-            return snip.captures[1] .. '^{' .. snip.captures[2] .. '}'
-        end)},
-        {condition = in_mathzone}
-    ),
-    s(
-        {
-            trig = '([^%s]+)ss(-?[A-Za-z%d]+)',
-            dscr = 'Expands subscript',
-            regTrig = true,
-            snippetType = 'autosnippet'
-        },
-        {f(function(args, snip)
-            return snip.captures[1] .. '_{' .. snip.captures[2] .. '}'
-        end)},
-        {condition = in_mathzone}
-    ),
 
     -- math mode (autosnippets)
     s(
