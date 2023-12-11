@@ -348,6 +348,24 @@ return {
     ),
     s(
         {
+            trig = 'int',
+            dscr = 'Expands integral',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\int _{<>} ^{<>} <>', {i(1), i(2), i(3)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
+            trig = 'lim',
+            dscr = 'Expands limit',
+            snippetType = 'autosnippet'
+        },
+        fmta('\\lim <>', {i(1)}),
+        {condition = in_mathzone}
+    ),
+    s(
+        {
             trig = 'sec',
             dscr = 'Expands secant symbol',
             snippetType = 'autosnippet'
