@@ -103,6 +103,8 @@ return require('packer').startup(function(use)
     use 'airblade/vim-gitgutter'
 
     -- Colorschemes
+    use 'AlexvZyl/nordic.nvim'
+
     use {
         'JoosepAlviste/palenightfall.nvim',
         config = function() require('plugins.palenight') end
