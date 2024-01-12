@@ -29,6 +29,13 @@ return require('packer').startup(function(use)
     -- LaTeX syntax highlighting
     use 'lervag/vimtex'
 
+    -- use({
+    --     'iamcco/markdown-preview.nvim',
+    --     run = 'cd app && npm install',
+    --     setup = function() vim.g.mkdp_filetypes = {'markdown'} end,
+    --     ft = {'markdown'}
+    -- })
+
     -- Start screen
     use {
         'goolord/alpha-nvim',
