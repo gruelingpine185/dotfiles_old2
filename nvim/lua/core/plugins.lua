@@ -29,6 +29,9 @@ return require('packer').startup(function(use)
     -- LaTeX syntax highlighting
     use 'lervag/vimtex'
 
+    -- Risc-V syntax highlighting
+    use 'kylelaker/riscv.vim'
+
     -- use({
     --     'iamcco/markdown-preview.nvim',
     --     run = 'cd app && npm install',
